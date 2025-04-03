@@ -34,3 +34,9 @@ pred directDelete [f: File] {
   after File' = File - f
   Trash' = Trash
 }
+ pred duplicate [f:File, fNew:File'] {
+	f in File
+	fNew not in File
+	after File' = File + fNew
+	Trash' = Trash
+} 
