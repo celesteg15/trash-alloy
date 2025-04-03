@@ -48,6 +48,6 @@ pred restore [f : File] {
   // Remove 'f' from Trash in next step
   Trash' = Trash - f
 
-  // File set remains the same (frame condition)
+  // File set remains the same
   File' = File
 }
