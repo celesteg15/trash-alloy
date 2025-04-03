@@ -40,3 +40,14 @@ pred directDelete [f: File] {
 	after File' = File + fNew
 	Trash' = Trash
 } 
+
+pred restore [f : File] {
+  // Only if 'f' is in Trash
+  f in Trash
+
+  // Remove 'f' from Trash in next step
+  Trash' = Trash - f
+
+  // File set remains the same (frame condition)
+  File' = File
+}
