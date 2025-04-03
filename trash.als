@@ -28,3 +28,9 @@ fact trans {
 }
 
 run example {}
+
+pred directDelete [f: File] {
+  f in File and not (f in Trash)
+  after File' = File - f
+  Trash' = Trash
+}
