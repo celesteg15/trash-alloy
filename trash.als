@@ -13,7 +13,7 @@ pred empty {
 
 pred delete [f : File] {
   not (f in Trash)   // guard
-  Trash' = Trash + f // effect on Trash
+  Trash' = Trash + File // effect on Trash
   File' = File       // frame condition on File
 }
 
